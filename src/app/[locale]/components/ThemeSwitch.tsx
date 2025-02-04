@@ -13,8 +13,12 @@ export default function ThemeSwitch() {
   const [isOpen, setIsOpen] = useState(false) // New state to control dropdown visibility
   const { setTheme, resolvedTheme, themes, theme } = useTheme()
   const ref = useRef(null)
+
+  
   useEffect(() => setMounted(true), [])
   useOnClickOutside(ref, () => setIsOpen(false))
+
+
   if (!mounted)
     return (
       <Button
@@ -23,7 +27,7 @@ export default function ThemeSwitch() {
         className='text-destructive inline-flex w-fit min-w-[95px] items-center justify-between gap-3'
         id='options-menu'
         aria-expanded={isOpen}
-        onClick={() => {}}
+        onClick={() => { }}
       >
         <span className='ml-2'>{t('Theme')}</span>
         <FiSun />
@@ -63,11 +67,10 @@ export default function ThemeSwitch() {
                     setTheme(themeItem)
                     setIsOpen(false)
                   }}
-                  className={`block w-full px-4 py-2 text-left text-sm hover:bg-dropdownHover ${
-                    themeItem === theme
+                  className={`block w-full px-4 py-2 text-left text-sm hover:bg-dropdownHover ${themeItem === theme
                       ? 'bg-selected text-primary hover:bg-selected'
                       : 'text-secondary'
-                  }`}
+                    }`}
                 >
                   {capitalize(themeItem)}
                 </button>

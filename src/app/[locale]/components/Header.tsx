@@ -35,9 +35,9 @@ export const Header: FC<Props> = ({ locale }) => {
           href='https://github.com/yahyaparvar/nextjs-template'
           target='_blank'
         >
-          <div className='size-8'>
+          {/* <div className='size-8'>
             <GithubIcon />
-          </div>
+          </div> */}
         </a>
       </div>
     </div>
